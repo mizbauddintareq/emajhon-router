@@ -1,33 +1,13 @@
 import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const products = useLoaderData();
 
   const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-  /* useEffect(() => {
-    const storedCart = getStoredCart();
-    const savedCart = [];
-    for (const id in storedCart) {
-      const addedProduct = products.find((product) => product.id === id);
-
-      if (addedProduct) {
-        const quantity = storedCart[id];
-        addedProduct.quantity = quantity;
-        savedCart.push(addedProduct);
-      }
-    }
-    setCart(savedCart);
-  }, [products]); */
 
   useEffect(() => {
     const storedCart = getStoredCart();

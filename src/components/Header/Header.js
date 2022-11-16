@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../images/Logo.svg";
 const Header = () => {
   return (
@@ -26,33 +27,33 @@ const Header = () => {
               className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-900 rounded-box w-52"
             >
               <li>
-                <a>Order</a>
+                <Link to="/orders">Order</Link>
               </li>
               <li tabIndex={0}>
                 <a className="justify-between">Order Review</a>
               </li>
               <li>
-                <a>Manage Inventory</a>
+                <Link to="/inventory">Manage Inventory</Link>
               </li>
               <li>
                 <a>Login</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case">
+          <Link to="/" className="btn btn-ghost normal-case">
             <img src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <a>Order</a>
+              <Link to="/orders">Order</Link>
             </li>
             <li tabIndex={0}>
               <a>Order Review</a>
             </li>
             <li>
-              <a>Manage Inventory</a>
+              <Link to="/inventory">Manage Inventory</Link>
             </li>
             <li>
               <a>Login</a>
